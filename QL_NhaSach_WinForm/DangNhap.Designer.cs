@@ -29,7 +29,7 @@ namespace QL_NhaSach_WinForm
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnDK = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,14 +41,15 @@ namespace QL_NhaSach_WinForm
             this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button1
+            // btnDK
             // 
-            this.button1.Location = new System.Drawing.Point(66, 310);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(210, 35);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Đăng ký tài khoản mới";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnDK.Location = new System.Drawing.Point(66, 310);
+            this.btnDK.Name = "btnDK";
+            this.btnDK.Size = new System.Drawing.Size(210, 35);
+            this.btnDK.TabIndex = 0;
+            this.btnDK.Text = "Đăng ký tài khoản mới";
+            this.btnDK.UseVisualStyleBackColor = true;
+            this.btnDK.Click += new System.EventHandler(this.btnDK_Click);
             // 
             // button2
             // 
@@ -148,7 +149,7 @@ namespace QL_NhaSach_WinForm
             this.Controls.Add(this.txtLogin);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnDK);
             this.Name = "DangNhap";
             this.Text = "DangNhap";
             this.ResumeLayout(false);
@@ -168,5 +169,6 @@ namespace QL_NhaSach_WinForm
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.CheckBox chkBoxRememberPass;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnDK;
     }
 }

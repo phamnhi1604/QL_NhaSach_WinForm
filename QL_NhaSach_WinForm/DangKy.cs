@@ -14,5 +14,12 @@ namespace QL_NhaSach_WinForm
         {
             InitializeComponent();
         }
+
+        private void btnDN_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DangNhap DN = new DangNhap();
+            DN.Show();
+        }
     }
 }

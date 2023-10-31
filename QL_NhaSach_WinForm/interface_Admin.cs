@@ -14,5 +14,7 @@ namespace QL_NhaSach_WinForm
         {
             InitializeComponent();
         }
+
+
     }
 }

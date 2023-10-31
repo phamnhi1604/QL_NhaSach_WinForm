@@ -8,18 +8,11 @@ using System.Windows.Forms;
 
 namespace QL_NhaSach_WinForm
 {
-    public partial class DangKy : Form
+    public partial class DanhMuc : Form
     {
-        public DangKy()
+        public DanhMuc()
         {
             InitializeComponent();
-        }
-
-        private void btnDN_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            DangNhap DN = new DangNhap();
-            DN.Show();
         }
     }
 }

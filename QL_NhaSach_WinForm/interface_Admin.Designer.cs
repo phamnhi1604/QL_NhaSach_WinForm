@@ -31,8 +31,10 @@ namespace QL_NhaSach_WinForm
         {
             this.vScrollBar2 = new System.Windows.Forms.VScrollBar();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
@@ -41,11 +43,6 @@ namespace QL_NhaSach_WinForm
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -55,12 +52,6 @@ namespace QL_NhaSach_WinForm
             this.label4 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.vScrollBar3 = new System.Windows.Forms.VScrollBar();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.button13 = new System.Windows.Forms.Button();
-            this.pageManage_NXB = new System.Windows.Forms.TabPage();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -83,9 +74,6 @@ namespace QL_NhaSach_WinForm
             this.pageManage_staff = new System.Windows.Forms.TabPage();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            this.groupBox4.SuspendLayout();
-            this.pageManage_NXB.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.pageManage_book.SuspendLayout();
@@ -97,15 +85,17 @@ namespace QL_NhaSach_WinForm
             // 
             // vScrollBar2
             // 
-            this.vScrollBar2.Location = new System.Drawing.Point(692, 126);
+            this.vScrollBar2.Location = new System.Drawing.Point(698, 126);
             this.vScrollBar2.Name = "vScrollBar2";
             this.vScrollBar2.Size = new System.Drawing.Size(17, 425);
             this.vScrollBar2.TabIndex = 8;
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.comboBox3);
             this.groupBox3.Controls.Add(this.textBox7);
             this.groupBox3.Controls.Add(this.textBox6);
+            this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.button10);
             this.groupBox3.Controls.Add(this.button9);
@@ -116,30 +106,48 @@ namespace QL_NhaSach_WinForm
             this.groupBox3.Size = new System.Drawing.Size(698, 111);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Thông tin tác giả";
+            this.groupBox3.Text = "Thông tin nhân viên";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(106, 76);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(152, 23);
+            this.comboBox3.TabIndex = 6;
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(88, 61);
+            this.textBox7.Location = new System.Drawing.Point(106, 52);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(152, 23);
             this.textBox7.TabIndex = 5;
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(88, 23);
+            this.textBox6.Location = new System.Drawing.Point(106, 27);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(152, 23);
             this.textBox6.TabIndex = 5;
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(18, 77);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(51, 15);
+            this.label12.TabIndex = 2;
+            this.label12.Text = "Chức vụ";
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(18, 65);
+            this.label8.Location = new System.Drawing.Point(18, 52);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(63, 15);
+            this.label8.Size = new System.Drawing.Size(80, 15);
             this.label8.TabIndex = 2;
-            this.label8.Text = "Tên tác giả";
+            this.label8.Text = "Tên nhân viên";
             // 
             // button10
             // 
@@ -171,17 +179,18 @@ namespace QL_NhaSach_WinForm
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(18, 27);
+            this.label9.Location = new System.Drawing.Point(18, 25);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(62, 15);
+            this.label9.Size = new System.Drawing.Size(79, 15);
             this.label9.TabIndex = 2;
-            this.label9.Text = "Mã tác giả";
+            this.label9.Text = "Mã nhân viên";
             // 
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(12, 126);
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 62;
             this.dataGridView2.RowTemplate.Height = 25;
             this.dataGridView2.Size = new System.Drawing.Size(698, 425);
             this.dataGridView2.TabIndex = 7;
@@ -203,49 +212,6 @@ namespace QL_NhaSach_WinForm
             this.button6.TabIndex = 4;
             this.button6.Text = "Nhập lại";
             this.button6.UseVisualStyleBackColor = true;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(88, 23);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(152, 23);
-            this.textBox9.TabIndex = 5;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(18, 65);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(51, 15);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "Tên NXB";
-            // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(584, 23);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(88, 23);
-            this.button11.TabIndex = 4;
-            this.button11.Text = "Chỉnh sửa";
-            this.button11.UseVisualStyleBackColor = true;
-            // 
-            // button12
-            // 
-            this.button12.Location = new System.Drawing.Point(482, 23);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(88, 23);
-            this.button12.TabIndex = 4;
-            this.button12.Text = "Xóa";
-            this.button12.UseVisualStyleBackColor = true;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(18, 27);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(50, 15);
-            this.label11.TabIndex = 2;
-            this.label11.Text = "Mã NXB";
             // 
             // button4
             // 
@@ -276,7 +242,6 @@ namespace QL_NhaSach_WinForm
             // 
             // textBox1
             // 
-            this.textBox1.Enabled = false;
             this.textBox1.Location = new System.Drawing.Point(87, 53);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(123, 23);
@@ -284,7 +249,6 @@ namespace QL_NhaSach_WinForm
             // 
             // textBox3
             // 
-            this.textBox3.Enabled = false;
             this.textBox3.Location = new System.Drawing.Point(87, 82);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(123, 23);
@@ -326,67 +290,6 @@ namespace QL_NhaSach_WinForm
             this.label3.TabIndex = 2;
             this.label3.Text = "Đơn Giá";
             // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(88, 61);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(152, 23);
-            this.textBox8.TabIndex = 5;
-            // 
-            // vScrollBar3
-            // 
-            this.vScrollBar3.Location = new System.Drawing.Point(691, 126);
-            this.vScrollBar3.Name = "vScrollBar3";
-            this.vScrollBar3.Size = new System.Drawing.Size(17, 425);
-            this.vScrollBar3.TabIndex = 10;
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(11, 126);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowTemplate.Height = 25;
-            this.dataGridView3.Size = new System.Drawing.Size(698, 425);
-            this.dataGridView3.TabIndex = 9;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.textBox8);
-            this.groupBox4.Controls.Add(this.textBox9);
-            this.groupBox4.Controls.Add(this.label10);
-            this.groupBox4.Controls.Add(this.button11);
-            this.groupBox4.Controls.Add(this.button12);
-            this.groupBox4.Controls.Add(this.button13);
-            this.groupBox4.Controls.Add(this.label11);
-            this.groupBox4.Location = new System.Drawing.Point(11, 9);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(698, 111);
-            this.groupBox4.TabIndex = 7;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Thông tin nhà xuất bản";
-            // 
-            // button13
-            // 
-            this.button13.Location = new System.Drawing.Point(381, 23);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(88, 23);
-            this.button13.TabIndex = 4;
-            this.button13.Text = "Nhập";
-            this.button13.UseVisualStyleBackColor = true;
-            // 
-            // pageManage_NXB
-            // 
-            this.pageManage_NXB.Controls.Add(this.vScrollBar3);
-            this.pageManage_NXB.Controls.Add(this.dataGridView3);
-            this.pageManage_NXB.Controls.Add(this.groupBox4);
-            this.pageManage_NXB.Location = new System.Drawing.Point(4, 24);
-            this.pageManage_NXB.Name = "pageManage_NXB";
-            this.pageManage_NXB.Padding = new System.Windows.Forms.Padding(3);
-            this.pageManage_NXB.Size = new System.Drawing.Size(726, 557);
-            this.pageManage_NXB.TabIndex = 2;
-            this.pageManage_NXB.Text = "Nhà xuất bản";
-            this.pageManage_NXB.UseVisualStyleBackColor = true;
-            // 
             // textBox5
             // 
             this.textBox5.Enabled = false;
@@ -426,7 +329,6 @@ namespace QL_NhaSach_WinForm
             // 
             this.tabControl1.Controls.Add(this.pageManage_book);
             this.tabControl1.Controls.Add(this.pageManage_staff);
-            this.tabControl1.Controls.Add(this.pageManage_NXB);
             this.tabControl1.Location = new System.Drawing.Point(14, 44);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -442,7 +344,7 @@ namespace QL_NhaSach_WinForm
             this.pageManage_book.Controls.Add(this.dataGridView1);
             this.pageManage_book.Location = new System.Drawing.Point(4, 24);
             this.pageManage_book.Name = "pageManage_book";
-            this.pageManage_book.Padding = new System.Windows.Forms.Padding(3);
+            this.pageManage_book.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.pageManage_book.Size = new System.Drawing.Size(726, 557);
             this.pageManage_book.TabIndex = 1;
             this.pageManage_book.Text = "Quản lý kho";
@@ -573,6 +475,7 @@ namespace QL_NhaSach_WinForm
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 186);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.Size = new System.Drawing.Size(699, 365);
             this.dataGridView1.TabIndex = 1;
             // 
@@ -583,7 +486,7 @@ namespace QL_NhaSach_WinForm
             this.pageManage_staff.Controls.Add(this.groupBox3);
             this.pageManage_staff.Location = new System.Drawing.Point(4, 24);
             this.pageManage_staff.Name = "pageManage_staff";
-            this.pageManage_staff.Padding = new System.Windows.Forms.Padding(3);
+            this.pageManage_staff.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.pageManage_staff.Size = new System.Drawing.Size(726, 557);
             this.pageManage_staff.TabIndex = 0;
             this.pageManage_staff.Text = "Nhân viên";
@@ -593,7 +496,7 @@ namespace QL_NhaSach_WinForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(759, 759);
+            this.ClientSize = new System.Drawing.Size(759, 630);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControl1);
             this.Name = "interface_Admin";
@@ -601,10 +504,6 @@ namespace QL_NhaSach_WinForm
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            this.pageManage_NXB.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
@@ -633,11 +532,6 @@ namespace QL_NhaSach_WinForm
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
@@ -647,12 +541,6 @@ namespace QL_NhaSach_WinForm
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.VScrollBar vScrollBar3;
-        private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.TabPage pageManage_NXB;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel1;
@@ -673,5 +561,7 @@ namespace QL_NhaSach_WinForm
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TabPage pageManage_staff;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Label label12;
     }
 }

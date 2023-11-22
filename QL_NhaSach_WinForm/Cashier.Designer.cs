@@ -117,6 +117,7 @@ namespace QL_NhaSach_WinForm
             this.btnDX.TabIndex = 1;
             this.btnDX.Text = "Đăng xuất";
             this.btnDX.UseVisualStyleBackColor = true;
+            this.btnDX.Click += new System.EventHandler(this.btnDX_Click);
             // 
             // label9
             // 

@@ -315,5 +315,13 @@ namespace QL_NhaSach_WinForm
             load_cbo_KhachHang();
 
         }
+
+        private void btnDX_Click(object sender, EventArgs e)
+        {
+            DangNhap dn = new DangNhap();
+            dn.Show();
+
+            this.Hide();
+        }
     }
 }

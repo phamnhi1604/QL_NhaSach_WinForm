@@ -36,7 +36,7 @@ namespace QL_NhaSach_WinForm
         private void btnDN_Click(object sender, EventArgs e)
         {
             string username, password;
-
+            
             username = txtUserName.Text;
             password = txtPassword.Text;
 
@@ -44,7 +44,7 @@ namespace QL_NhaSach_WinForm
 
             try
             {
-                string select_string = "select * from DangNhap where username = '" + txtUserName.Text + "' AND password = '" + txtPassword.Text + "'";
+                string select_string = "select * from nhanvien where manv = '" + txtUserName.Text + "' AND password = '" + txtPassword.Text + "'";
 
                 SqlDataAdapter sda = new SqlDataAdapter(select_string, connsql);
 
@@ -59,7 +59,7 @@ namespace QL_NhaSach_WinForm
 
                     // Đưa cái bảng tiếp theo vào.
 
-                    if (txtUserName.Text == "admin" && txtPassword.Text == "admin")
+                    if (txtUserName.Text == "admin")
                     {
                         //MessageBox.Show("Bang cho admin.");
                         interface_Admin form_admin = new interface_Admin();
@@ -72,8 +72,8 @@ namespace QL_NhaSach_WinForm
                     {
                         //MessageBox.Show("Bang cho nhan vien.");
                         nameVar = txtUserName.Text;
-                        Cashier form_nvthungan = new Cashier();
-                        form_nvthungan.Show();
+                        interfaceNV form_nv = new interfaceNV();
+                        form_nv.Show();
                         this.Hide();
 
                     }

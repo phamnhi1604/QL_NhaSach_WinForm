@@ -24,9 +24,9 @@ namespace QL_NhaSach_WinForm
 
         private void btnTT_Click(object sender, EventArgs e)
         {
-            Form_Info form_tt = new Form_Info();
-            form_tt.Show();
-            this.Hide();
+            //Form_Info form_tt = new Form_Info();
+            //form_tt.Show();
+            //this.Hide();
         }
 
         private void btnKH_Click(object sender, EventArgs e)

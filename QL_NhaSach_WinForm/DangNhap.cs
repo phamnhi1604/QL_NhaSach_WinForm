@@ -62,7 +62,7 @@ namespace QL_NhaSach_WinForm
                     if (txtUserName.Text == "admin")
                     {
                         //MessageBox.Show("Bang cho admin.");
-                        interface_Admin form_admin = new interface_Admin();
+                        InterfaceAdmin form_admin = new InterfaceAdmin();
                         form_admin.Show();
                         this.Hide();
 

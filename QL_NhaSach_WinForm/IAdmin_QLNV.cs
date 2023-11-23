@@ -54,7 +54,6 @@ namespace QL_NhaSach_WinForm
                 txtPW.Text = dgvNV.CurrentRow.Cells[1].Value.ToString();
                 txtSDT.Text = dgvNV.CurrentRow.Cells[5].Value.ToString();
                 cboPhai.Text = dgvNV.CurrentRow.Cells[4].Value.ToString();
-                cboRoles.Text = dgvNV.CurrentRow.Cells[6].Value.ToString();
 
             }
         }
@@ -85,7 +84,6 @@ namespace QL_NhaSach_WinForm
                     new_row["password"] = txtPW.Text;
                     new_row["SDT"] = txtSDT.Text;
                     new_row["gioitinh"] = cboPhai.SelectedItem.ToString();
-                    new_row["roles"] = cboRoles.SelectedIndex.ToString();
                     new_row["DiaChi"] = txtDC.Text;
                     if (txtSDT.Text == null)
                     {

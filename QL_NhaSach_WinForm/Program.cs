@@ -17,7 +17,7 @@ namespace QL_NhaSach_WinForm
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new IAdmin_QLNV());
+            Application.Run(new Cashier());
         }
     }
 }

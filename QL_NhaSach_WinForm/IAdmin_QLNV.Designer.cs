@@ -51,8 +51,6 @@ namespace QL_NhaSach_WinForm
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnDX = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cboRoles = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNV)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -63,7 +61,7 @@ namespace QL_NhaSach_WinForm
             // dgvNV
             // 
             this.dgvNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvNV.Location = new System.Drawing.Point(13, 345);
+            this.dgvNV.Location = new System.Drawing.Point(13, 275);
             this.dgvNV.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvNV.Name = "dgvNV";
             this.dgvNV.RowHeadersWidth = 62;
@@ -74,7 +72,6 @@ namespace QL_NhaSach_WinForm
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.cboRoles);
             this.groupBox3.Controls.Add(this.cboPhai);
             this.groupBox3.Controls.Add(this.txtMaNV);
             this.groupBox3.Controls.Add(this.txtDC);
@@ -88,14 +85,13 @@ namespace QL_NhaSach_WinForm
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.btnDelNV);
             this.groupBox3.Controls.Add(this.btnEditNV);
-            this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Location = new System.Drawing.Point(13, 68);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox3.Size = new System.Drawing.Size(1110, 267);
+            this.groupBox3.Size = new System.Drawing.Size(1110, 187);
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thông tin nhân viên";
@@ -298,33 +294,11 @@ namespace QL_NhaSach_WinForm
             this.btnDX.UseVisualStyleBackColor = true;
             this.btnDX.Click += new System.EventHandler(this.btnDX_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 195);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 25);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Chức vụ";
-            // 
-            // cboRoles
-            // 
-            this.cboRoles.FormattingEnabled = true;
-            this.cboRoles.Items.AddRange(new object[] {
-            "Admin",
-            "Nhân viên"});
-            this.cboRoles.Location = new System.Drawing.Point(151, 192);
-            this.cboRoles.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cboRoles.Name = "cboRoles";
-            this.cboRoles.Size = new System.Drawing.Size(215, 33);
-            this.cboRoles.TabIndex = 6;
-            // 
             // IAdmin_QLNV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1139, 803);
+            this.ClientSize = new System.Drawing.Size(1139, 735);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dgvNV);
@@ -368,7 +342,5 @@ namespace QL_NhaSach_WinForm
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnDX;
-        private System.Windows.Forms.ComboBox cboRoles;
-        private System.Windows.Forms.Label label1;
     }
 }

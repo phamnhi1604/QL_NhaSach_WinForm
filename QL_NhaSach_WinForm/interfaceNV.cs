@@ -10,9 +10,16 @@ namespace QL_NhaSach_WinForm
 {
     public partial class interfaceNV : Form
     {
+        public string TenNhanVien { get; set; }
+        public interfaceNV(string tenNhanVien)
+        {
+
+            InitializeComponent();
+            TenNhanVien = tenNhanVien;
+        }
+
         public interfaceNV()
         {
-            InitializeComponent();
         }
 
         private void btnNhapS_Click(object sender, EventArgs e)
@@ -24,9 +31,9 @@ namespace QL_NhaSach_WinForm
 
         private void btnTT_Click(object sender, EventArgs e)
         {
-            //Form_Info form_tt = new Form_Info();
-            //form_tt.Show();
-            //this.Hide();
+            Form_Info form_tt = new Form_Info();
+            form_tt.Show();
+            this.Hide();
         }
 
         private void btnKH_Click(object sender, EventArgs e)
@@ -36,7 +43,7 @@ namespace QL_NhaSach_WinForm
 
         private void btnHD_Click(object sender, EventArgs e)
         {
-            Cashier form_nvthungan = new Cashier();
+            Cashier form_nvthungan = new Cashier(TenNhanVien);
             form_nvthungan.Show();
             this.Hide();
         }
@@ -44,6 +51,11 @@ namespace QL_NhaSach_WinForm
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void interfaceNV_Load(object sender, EventArgs e)
+        {
+            txtUser.Text = TenNhanVien;
         }
     }
 }

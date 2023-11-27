@@ -19,7 +19,7 @@ namespace QL_NhaSach_WinForm
         public DangNhap()
         {
             InitializeComponent();
-            connsql = new SqlConnection(@"Data Source=DESKTOP-U2QN3CF\SQLEXPRESS;Initial Catalog=QL_NhaSach_DA_DotNet;Integrated Security=True");
+            connsql = new SqlConnection(@"Data Source=LAPTOP-E3VIO9U0;Initial Catalog=QL_NhaSach_DA_DotNet;Integrated Security=True");
         }
         private void DangNhap_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -52,6 +52,7 @@ namespace QL_NhaSach_WinForm
 
                 sda.Fill(dtable);
 
+                string tenNhanVien = dtable.Rows[0][0].ToString(); // Hàm này cần được triển khai
                 if (dtable.Rows.Count > 0)
                 {
                     username = txtUserName.Text;
@@ -62,7 +63,7 @@ namespace QL_NhaSach_WinForm
                     if (txtUserName.Text == "admin")
                     {
                         //MessageBox.Show("Bang cho admin.");
-                        InterfaceAdmin form_admin = new InterfaceAdmin();
+                        interface_Admin form_admin = new interface_Admin();
                         form_admin.Show();
                         this.Hide();
 
@@ -72,7 +73,7 @@ namespace QL_NhaSach_WinForm
                     {
                         //MessageBox.Show("Bang cho nhan vien.");
                         nameVar = txtUserName.Text;
-                        interfaceNV form_nv = new interfaceNV();
+                        interfaceNV form_nv = new interfaceNV(tenNhanVien);
                         form_nv.Show();
                         this.Hide();
 

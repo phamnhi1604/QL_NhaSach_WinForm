@@ -13,7 +13,7 @@ namespace QL_NhaSach_WinForm
     public partial class PhieuNhap : Form
     {
         DataTable dtable;
-        SqlConnection connsql = new SqlConnection(@"Data Source=DESKTOP-U2QN3CF\SQLEXPRESS;Initial Catalog=QL_NhaSach_DA_DotNet;Integrated Security=True");
+        SqlConnection connsql = new SqlConnection(@"Data Source=LAPTOP-E3VIO9U0;Initial Catalog=QL_NhaSach_DA_DotNet;Integrated Security=True");
 
         public PhieuNhap()
         {
@@ -48,9 +48,11 @@ namespace QL_NhaSach_WinForm
             load_solg_donGia();
 
         }
+        //sửa CT_HoaDon thành CT_Phieu nhap
+        //where SoHD = '" + cbMaPN.SelectedValue.ToString() + "'
         public void load_ct_phieunhap()
         {
-            string select_string = "select * from CT_HoaDon where SoHD = '" + cbMaPN.SelectedValue.ToString() + "'";
+            string select_string = "select * from CT_HoaDon";
             SqlDataAdapter sda = new SqlDataAdapter(select_string, connsql);
             DataTable dtable = new DataTable();
             sda.Fill(dtable);
@@ -117,6 +119,15 @@ namespace QL_NhaSach_WinForm
             }
         }
 
+        private void gdvPN_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
+        }
+
+        private void PhieuNhap_Load(object sender, EventArgs e)
+        {
+            load_ct_phieunhap();
+            load_pn();
+        }
     }
 }

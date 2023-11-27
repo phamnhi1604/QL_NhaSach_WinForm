@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace QL_NhaSach_WinForm
 {
-    public partial class InterfaceAdmin : Form
+    public partial class Form_Info : Form
     {
-        public InterfaceAdmin()
+        public Form_Info()
         {
             InitializeComponent();
         }

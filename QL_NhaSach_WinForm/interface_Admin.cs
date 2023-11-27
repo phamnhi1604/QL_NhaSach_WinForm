@@ -14,7 +14,7 @@ namespace QL_NhaSach_WinForm
     public partial class interface_Admin : Form
     {
         DataTable dtable;
-        SqlConnection connsql = new SqlConnection(@"Data Source=DESKTOP-U2QN3CF\SQLEXPRESS;Initial Catalog=QL_NhaSach_DA_DotNet;Integrated Security=True");
+        SqlConnection connsql = new SqlConnection(@"Data Source=LAPTOP-E3VIO9U0;Initial Catalog=QL_NhaSach_DA_DotNet;Integrated Security=True");
 
 
         public interface_Admin()
@@ -234,6 +234,10 @@ namespace QL_NhaSach_WinForm
 
 
         }
+
+
+
+
         private void dgvNV_SelectionChanged(object sender, EventArgs e)
         {
             if (dgvNV.CurrentRow != null)
@@ -241,6 +245,7 @@ namespace QL_NhaSach_WinForm
                 txtMaNV.Text = dgvNV.CurrentRow.Cells[0].Value.ToString();
                 txtTenNV.Text = dgvNV.CurrentRow.Cells[2].Value.ToString();
                 txtPW.Text = dgvNV.CurrentRow.Cells[1].Value.ToString();
+
                 txtSDT.Text = dgvNV.CurrentRow.Cells[5].Value.ToString();
 
             }
@@ -351,7 +356,7 @@ namespace QL_NhaSach_WinForm
 
                 if (d_row != null)
                 {
-                    d_row["tenkh"] = txtTenNV.Text;
+                    d_row["tenNV"] = txtTenNV.Text;
                     d_row["password"] = txtPW.Text;
                     d_row["sdt"] = txtSDT.Text;
                     d_row["diachi"] = txtDC.Text;
@@ -380,6 +385,9 @@ namespace QL_NhaSach_WinForm
 
         }
 
+        private void button7_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

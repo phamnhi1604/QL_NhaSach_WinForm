@@ -29,173 +29,183 @@ namespace QL_NhaSach_WinForm
         /// </summary>
         private void InitializeComponent()
         {
-            this.cashierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.khoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sáchToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.nhậpSáchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnNhapS = new System.Windows.Forms.Button();
-            this.btnHD = new System.Windows.Forms.Button();
-            this.btnTT = new System.Windows.Forms.Button();
-            this.btnThongKe = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.SuspendLayout();
+            cashierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            khoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            sáchToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            nhậpSáchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            btnNhapS = new System.Windows.Forms.Button();
+            btnHD = new System.Windows.Forms.Button();
+            btnTT = new System.Windows.Forms.Button();
+            btnThongKe = new System.Windows.Forms.Button();
+            pictureBox1 = new System.Windows.Forms.PictureBox();
+            button1 = new System.Windows.Forms.Button();
+            panel1 = new System.Windows.Forms.Panel();
+            txtUser = new System.Windows.Forms.TextBox();
+            label1 = new System.Windows.Forms.Label();
+            panel2 = new System.Windows.Forms.Panel();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel1.SuspendLayout();
+            panel2.SuspendLayout();
+            SuspendLayout();
             // 
             // cashierToolStripMenuItem
             // 
-            this.cashierToolStripMenuItem.Name = "cashierToolStripMenuItem";
-            this.cashierToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.cashierToolStripMenuItem.Text = "Cashier";
+            cashierToolStripMenuItem.Name = "cashierToolStripMenuItem";
+            cashierToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            cashierToolStripMenuItem.Text = "Cashier";
             // 
             // khoToolStripMenuItem
             // 
-            this.khoToolStripMenuItem.Name = "khoToolStripMenuItem";
-            this.khoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.khoToolStripMenuItem.Text = "Kho";
+            khoToolStripMenuItem.Name = "khoToolStripMenuItem";
+            khoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            khoToolStripMenuItem.Text = "Kho";
             // 
             // sáchToolStripMenuItem1
             // 
-            this.sáchToolStripMenuItem1.Name = "sáchToolStripMenuItem1";
-            this.sáchToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.sáchToolStripMenuItem1.Text = "&Sách";
+            sáchToolStripMenuItem1.Name = "sáchToolStripMenuItem1";
+            sáchToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            sáchToolStripMenuItem1.Text = "&Sách";
             // 
             // nhậpSáchToolStripMenuItem
             // 
-            this.nhậpSáchToolStripMenuItem.Name = "nhậpSáchToolStripMenuItem";
-            this.nhậpSáchToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.nhậpSáchToolStripMenuItem.Text = "Nhập sách";
+            nhậpSáchToolStripMenuItem.Name = "nhậpSáchToolStripMenuItem";
+            nhậpSáchToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            nhậpSáchToolStripMenuItem.Text = "Nhập sách";
             // 
             // btnNhapS
             // 
-            this.btnNhapS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(108)))), ((int)(((byte)(176)))));
-            this.btnNhapS.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnNhapS.Location = new System.Drawing.Point(1, 1);
-            this.btnNhapS.Name = "btnNhapS";
-            this.btnNhapS.Size = new System.Drawing.Size(114, 96);
-            this.btnNhapS.TabIndex = 0;
-            this.btnNhapS.Text = "Sách";
-            this.btnNhapS.UseVisualStyleBackColor = false;
-            this.btnNhapS.Click += new System.EventHandler(this.btnNhapS_Click);
+            btnNhapS.BackColor = System.Drawing.Color.FromArgb(40, 108, 176);
+            btnNhapS.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            btnNhapS.Location = new System.Drawing.Point(1, 1);
+            btnNhapS.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            btnNhapS.Name = "btnNhapS";
+            btnNhapS.Size = new System.Drawing.Size(130, 128);
+            btnNhapS.TabIndex = 0;
+            btnNhapS.Text = "Sách";
+            btnNhapS.UseVisualStyleBackColor = false;
+            btnNhapS.Click += btnNhapS_Click;
             // 
             // btnHD
             // 
-            this.btnHD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(177)))), ((int)(((byte)(109)))));
-            this.btnHD.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnHD.Location = new System.Drawing.Point(1, 94);
-            this.btnHD.Name = "btnHD";
-            this.btnHD.Size = new System.Drawing.Size(114, 96);
-            this.btnHD.TabIndex = 0;
-            this.btnHD.Text = "Hóa đơn";
-            this.btnHD.UseVisualStyleBackColor = false;
-            this.btnHD.Click += new System.EventHandler(this.btnHD_Click);
+            btnHD.BackColor = System.Drawing.Color.FromArgb(94, 177, 109);
+            btnHD.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            btnHD.Location = new System.Drawing.Point(1, 125);
+            btnHD.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            btnHD.Name = "btnHD";
+            btnHD.Size = new System.Drawing.Size(130, 128);
+            btnHD.TabIndex = 0;
+            btnHD.Text = "Hóa đơn";
+            btnHD.UseVisualStyleBackColor = false;
+            btnHD.Click += btnHD_Click;
             // 
             // btnTT
             // 
-            this.btnTT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(135)))), ((int)(((byte)(55)))));
-            this.btnTT.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnTT.Location = new System.Drawing.Point(1, 186);
-            this.btnTT.Name = "btnTT";
-            this.btnTT.Size = new System.Drawing.Size(114, 96);
-            this.btnTT.TabIndex = 0;
-            this.btnTT.Text = "Tra cứu";
-            this.btnTT.UseVisualStyleBackColor = false;
-            this.btnTT.Click += new System.EventHandler(this.btnTT_Click);
+            btnTT.BackColor = System.Drawing.Color.FromArgb(223, 135, 55);
+            btnTT.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            btnTT.Location = new System.Drawing.Point(1, 248);
+            btnTT.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            btnTT.Name = "btnTT";
+            btnTT.Size = new System.Drawing.Size(130, 128);
+            btnTT.TabIndex = 0;
+            btnTT.Text = "Tra cứu";
+            btnTT.UseVisualStyleBackColor = false;
+            btnTT.Click += btnTT_Click;
             // 
             // btnThongKe
             // 
-            this.btnThongKe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.btnThongKe.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnThongKe.Location = new System.Drawing.Point(1, 279);
-            this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.Size = new System.Drawing.Size(114, 96);
-            this.btnThongKe.TabIndex = 0;
-            this.btnThongKe.Text = "Thống kê";
-            this.btnThongKe.UseVisualStyleBackColor = false;
-            this.btnThongKe.Click += new System.EventHandler(this.btnKH_Click);
+            btnThongKe.BackColor = System.Drawing.Color.FromArgb(216, 31, 48);
+            btnThongKe.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            btnThongKe.Location = new System.Drawing.Point(1, 372);
+            btnThongKe.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            btnThongKe.Name = "btnThongKe";
+            btnThongKe.Size = new System.Drawing.Size(130, 128);
+            btnThongKe.TabIndex = 0;
+            btnThongKe.Text = "Thống kê";
+            btnThongKe.UseVisualStyleBackColor = false;
+            btnThongKe.Click += btnKH_Click;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::QL_NhaSach_WinForm.Properties.Resources.imgDN;
-            this.pictureBox1.Location = new System.Drawing.Point(118, 44);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(556, 331);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.Image = Properties.Resources.imgDN;
+            pictureBox1.Location = new System.Drawing.Point(135, 59);
+            pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(635, 441);
+            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(210, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Đăng xuất";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            button1.Location = new System.Drawing.Point(240, 17);
+            button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            button1.Name = "button1";
+            button1.Size = new System.Drawing.Size(86, 31);
+            button1.TabIndex = 2;
+            button1.Text = "Đăng xuất";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Gray;
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(118, 1);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(254, 49);
-            this.panel1.TabIndex = 3;
+            panel1.BackColor = System.Drawing.Color.Gray;
+            panel1.Controls.Add(txtUser);
+            panel1.Controls.Add(label1);
+            panel1.Location = new System.Drawing.Point(135, 1);
+            panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            panel1.Name = "panel1";
+            panel1.Size = new System.Drawing.Size(290, 65);
+            panel1.TabIndex = 3;
             // 
-            // textBox1
+            // txtUser
             // 
-            this.textBox1.Location = new System.Drawing.Point(69, 14);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(150, 23);
-            this.textBox1.TabIndex = 1;
+            txtUser.Location = new System.Drawing.Point(79, 19);
+            txtUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            txtUser.Name = "txtUser";
+            txtUser.Size = new System.Drawing.Size(171, 27);
+            txtUser.TabIndex = 1;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(7, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Xin chào";
+            label1.AutoSize = true;
+            label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            label1.Location = new System.Drawing.Point(8, 24);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(66, 20);
+            label1.TabIndex = 0;
+            label1.Text = "Xin chào";
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Location = new System.Drawing.Point(371, 1);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(303, 49);
-            this.panel2.TabIndex = 3;
+            panel2.BackColor = System.Drawing.Color.White;
+            panel2.Controls.Add(button1);
+            panel2.Location = new System.Drawing.Point(424, 1);
+            panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            panel2.Name = "panel2";
+            panel2.Size = new System.Drawing.Size(346, 65);
+            panel2.TabIndex = 3;
             // 
             // interfaceNV
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(685, 375);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnThongKe);
-            this.Controls.Add(this.btnTT);
-            this.Controls.Add(this.btnHD);
-            this.Controls.Add(this.btnNhapS);
-            this.Name = "interfaceNV";
-            this.Text = "interfaceNV";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(783, 500);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
+            Controls.Add(pictureBox1);
+            Controls.Add(btnThongKe);
+            Controls.Add(btnTT);
+            Controls.Add(btnHD);
+            Controls.Add(btnNhapS);
+            Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            Name = "interfaceNV";
+            Text = "interfaceNV";
+            Load += interfaceNV_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion
@@ -211,7 +221,7 @@ namespace QL_NhaSach_WinForm
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtUser;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
     }

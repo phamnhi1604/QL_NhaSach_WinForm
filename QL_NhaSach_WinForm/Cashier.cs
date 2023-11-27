@@ -9,20 +9,29 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using VBSQLHelper;
+using System.Reflection;
 
 namespace QL_NhaSach_WinForm
 {
+
     public partial class Cashier : Form
     {
+        public string TenNhanVien { get; set; }
         DataTable dtable;
-        SqlConnection connsql = new SqlConnection(@"Data Source=DESKTOP-U2QN3CF\SQLEXPRESS;Initial Catalog=QL_NhaSach_DA_DotNet;Integrated Security=True");
+        SqlConnection connsql = new SqlConnection(@"Data Source=LAPTOP-E3VIO9U0;Initial Catalog=QL_NhaSach_DA_DotNet;Integrated Security=True");
 
+
+        public Cashier(string tenNhanVien)
+        {
+            InitializeComponent();
+            TenNhanVien = tenNhanVien;
+        }
 
         public Cashier()
         {
             InitializeComponent();
-
         }
+
         private void Cashier_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult r;
@@ -42,7 +51,53 @@ namespace QL_NhaSach_WinForm
             cboMaHD.DataSource = dtable;
             cboMaHD.DisplayMember = "mahd";
             cboMaHD.ValueMember = "mahd";
+            dgvHD.DataSource = dtable;
         }
+
+        public void load_cbo_hd()
+        {
+            string select_string = "select * from HOADON";
+            SqlDataAdapter sda = new SqlDataAdapter(select_string, connsql);
+            DataTable dtable = new DataTable();
+            sda.Fill(dtable);
+
+            cboMaHD.DataSource = dtable;
+            cboMaHD.DisplayMember = "mahd";
+            cboMaHD.ValueMember = "mahd";
+
+            DataRow new_row = dtable.NewRow();
+            new_row["mahd"] = "Chon tat ca.";
+            dtable.Rows.Add(new_row);
+
+            cboMaHD.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cboMaHD.AutoCompleteSource = AutoCompleteSource.ListItems;
+
+            cboMaHD.SelectedIndex = cboMaHD.Items.Count - 1;
+
+            //if (cboMaHD.Items.Count > 0)
+            //{
+            //    // Chọn giá trị đầu tiên
+            //    cboMaHD.SelectedIndex = 0;
+
+            //    string maHoaDon = dtable.Rows[0]["mahd"].ToString();
+
+            //    // Gán giá trị cho ComboBox
+            //    cboMaHD.SelectedValue = maHoaDon;
+            //}
+
+        }
+
+        //public void load_cboTenSach()
+        //{
+        //    string select_string = "select * from Sach";
+        //    SqlDataAdapter sda = new SqlDataAdapter(select_string, connsql);
+        //    DataTable dtable = new DataTable();
+        //    sda.Fill(dtable);
+        //    cboTenSach.DataSource = dtable;
+        //    cboTenSach.DisplayMember = "tensach";
+        //    cboTenSach.ValueMember = "tensach";
+        //    dgvHD.DataSource = dtable;
+        //}
         public void load_cbo_maSach()
         {
             string select_string = "select * from Sach";
@@ -50,7 +105,7 @@ namespace QL_NhaSach_WinForm
             DataTable dtable_1 = new DataTable();
             sda.Fill(dtable_1);
             cboMaSach.DataSource = dtable_1;
-            cboMaSach.DisplayMember = "MaSach";
+            cboMaSach.DisplayMember = "TenSach";
             cboMaSach.ValueMember = "MaSach";
 
 
@@ -71,10 +126,10 @@ namespace QL_NhaSach_WinForm
             //DataRow new_row = dtable_cboKH.NewRow();
             //dtable_cboKH.Rows.Add(new_row);
 
-            cboTenKH.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            cboTenKH.AutoCompleteSource = AutoCompleteSource.ListItems;
+            //cboTenKH.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            //cboTenKH.AutoCompleteSource = AutoCompleteSource.ListItems;
 
-            cboTenKH.SelectedIndex = cboTenKH.Items.Count - 1;
+            //cboTenKH.SelectedIndex = cboTenKH.Items.Count - 1;
 
         }
         public void load_solg_donGia()
@@ -135,17 +190,6 @@ namespace QL_NhaSach_WinForm
                 sda.Update(dtable);
 
                 load_hd();
-
-
-
-
-
-
-
-
-
-
-
             }
             catch (Exception ex)
             {
@@ -153,15 +197,16 @@ namespace QL_NhaSach_WinForm
             }
 
         }
-
+        //where mahd = '" + cboMaHD.SelectedValue.ToString() + "'
         public void load_ct_hoaDon()
         {
-            string select_string = "select * from CT_HoaDon where mahd = '" + cboMaHD.SelectedValue.ToString() + "'";
+            string select_string = "select * from CT_HoaDon";
             SqlDataAdapter sda = new SqlDataAdapter(select_string, connsql);
             DataTable dtable = new DataTable();
             sda.Fill(dtable);
             dgvHD.DataSource = dtable;
         }
+
         //public string CreateAutoID_KH()
         //{
 
@@ -174,21 +219,22 @@ namespace QL_NhaSach_WinForm
                 SqlDataAdapter sda = new SqlDataAdapter(select_string, connsql);
                 DataTable dtable = new DataTable();
                 sda.Fill(dtable);
-                
+
 
                 DataRow new_row = dtable.NewRow();
-                new_row["makh"] =txtMaKH.Text;
+                new_row["makh"] = txtMaKH.Text;
                 new_row["tenkh"] = txtTenKh.Text;
                 new_row["diachi"] = txtDiaChi.Text;
                 new_row["gioitinh"] = cboPhai.SelectedItem.ToString();
                 new_row["sdt"] = txtSDT.Text;
+
 
                 dtable.Rows.Add(new_row);
 
                 SqlCommandBuilder cB = new SqlCommandBuilder(sda);
                 sda.Update(dtable);
 
-                
+
 
                 MessageBox.Show("Thêm thành công.");
             }
@@ -245,7 +291,6 @@ namespace QL_NhaSach_WinForm
             }
             load_KH();
             load_cbo_KhachHang();
-
         }
 
         private void btnEditKH_Click(object sender, EventArgs e)
@@ -289,7 +334,6 @@ namespace QL_NhaSach_WinForm
         public void load_KH()
         {
 
-
             string select_string = "select * from khachhang";
 
             SqlDataAdapter sda = new SqlDataAdapter(select_string, connsql);
@@ -308,10 +352,12 @@ namespace QL_NhaSach_WinForm
         }
         private void Cashier_Load(object sender, EventArgs e)
         {
-            load_hd();
+            txt_Nv.Text = TenNhanVien;
             load_cbo_maSach();
+            load_ct_hoaDon();
             load_KH();
-
+            load_cbo_hd();
+            //load_cboTenSach();
             load_cbo_KhachHang();
 
         }
@@ -322,6 +368,160 @@ namespace QL_NhaSach_WinForm
             dn.Show();
 
             this.Hide();
+        }
+
+        private void dgvHD_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private decimal CalculateTotalAmount()
+        {
+            decimal totalAmount = 0;
+
+            // Duyệt qua từng dòng trong DataGridView
+            foreach (DataGridViewRow row in dgvHD.Rows)
+            {
+                // Kiểm tra nếu dòng không phải là dòng header và có giá trị
+                if (!row.IsNewRow && row.Cells["Tongtien"].Value != null)
+                {
+                    // Lấy giá trị từ cột số tiền (thay "ColumnName" bằng tên cột thực tế)
+                    decimal amount = Convert.ToDecimal(row.Cells["Tongtien"].Value);
+
+                    // Cộng vào tổng số tiền
+                    totalAmount += amount;
+                }
+            }
+
+            return totalAmount;
+        }
+
+
+
+
+
+
+        private void btnTong_Click(object sender, EventArgs e)
+        {
+            double totalAmount = 0;
+
+
+
+
+            //foreach (DataGridViewRow row in dgvHD.Rows)
+            //{
+            //    // Kiểm tra xem ô trong cột "Tongtien" có giá trị không
+            //    if (row.Cells["Tongtien"].Value != null && row.Cells["Tongtien"].Value != DBNull.Value)
+            //    {
+            //        // Lấy giá trị từ ô trong cột "Tongtien" và chuyển đổi thành kiểu double
+            //        double amount;
+            //        if (double.TryParse(row.Cells["Tongtien"].Value.ToString(), out amount))
+            //        {
+            //            // Thêm vào tổng
+            //            totalAmount += amount;
+            //        }
+
+            //    }
+            //}
+
+
+            txtTong.Text = totalAmount.ToString();
+        }
+
+
+
+
+        private void xemChiTiếtHóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string select_string = "select * from CT_HOADON";
+                SqlDataAdapter sda = new SqlDataAdapter(select_string, connsql);
+                DataTable dtable = new DataTable();
+                sda.Fill(dtable);
+
+
+                DataRow new_row = dtable.NewRow();
+                new_row["Ma_CT_HOADON"] = txtCT_HOADON.Text;
+                new_row["MaHD"] = cboMaHD.SelectedValue.ToString();
+                new_row["MaSach"] = cboMaSach.SelectedValue.ToString();
+                new_row["SoLuong"] = txtSL.Text;
+                new_row["Thanhtien"] = decimal.TryParse(txtTong.Text, out decimal Thanhtien);
+                //new_row["makh"] = cboTenKH.SelectedValue.ToString();
+                dtable.Rows.Add(new_row);
+
+                SqlCommandBuilder cB = new SqlCommandBuilder(sda);
+                sda.Update(dtable);
+
+
+
+                MessageBox.Show("Thêm thành công.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Thêm thất bại.");
+            }
+            load_ct_hoaDon();
+
+        }
+
+        private decimal GetGiaTien(string maSach)
+        {
+            // Thực hiện truy vấn để lấy giá tiền từ CSDL hoặc nguồn dữ liệu khác
+            // Đây chỉ là một ví dụ đơn giản, bạn cần thay thế nó với mã logic lấy giá tiền thực tế của bạn
+            string selectGiaTienString = "SELECT GiaBia FROM Sach WHERE MaSach = '" + cboMaSach.SelectedValue.ToString() + "'";
+
+            using (SqlCommand cmd = new SqlCommand(selectGiaTienString, connsql))
+            {
+                connsql.Open();
+                object result = cmd.ExecuteScalar();
+                connsql.Close();
+
+                if (result != null && result != DBNull.Value)
+                {
+                    return Convert.ToDecimal(result);
+                }
+            }
+
+            return 0; // Giả định giá tiền là 0 nếu không tìm thấy
+        }
+        private void txtSL_TextChanged(object sender, EventArgs e)
+        {
+
+            //decimal tinhtoan = decimal.Parse(txtSL.Text)*;
+            string selectedMaSach = cboMaSach.SelectedValue?.ToString();
+
+            // Lấy giá tiền tương ứng từ CSDL hoặc từ nguồn dữ liệu khác
+            decimal giaTien = GetGiaTien(selectedMaSach);
+
+
+            txtDonGia.Text = giaTien.ToString();
+
+
+            if (txtSL.Text!="")
+            { 
+                decimal tongtien = GetGiaTien(selectedMaSach) * Int32.Parse(txtSL.Text);
+                txtTong.Text = tongtien.ToString();
+            }    
+            
+            // Hiển thị giá tiền vào TextBox
+            txtDonGia.Text = giaTien.ToString(); // Định dạng giá tiền
+
+            // tính tổng
+        
+            
+
+        }
+
+        private void cboMaSach_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+           
         }
     }
 }
